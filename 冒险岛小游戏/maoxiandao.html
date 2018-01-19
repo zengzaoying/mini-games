@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>冒险岛游戏</title>
+    <style type="text/css">
+        *{
+            margin: 0px;
+            padding: 0px;
+        }
+        #star{
+            position: relative;
+            width: 1530px;
+            height: 755px;
+            background-image: url("image/readyBg.jpg");
+            background-position: 100% 100%;
+            background-size: cover;
+            margin: 0 auto;
+
+        }
+        #star #shouye{
+            position: absolute;
+            top: 80px;
+            left: 180px;
+            width: 350px;
+            height: 400px;
+
+        }
+        #star #shouye .fontcolor{
+            color: red;
+        }
+        #star #startgame{
+            position: absolute;
+            top: 450px;
+            left: 350px;
+            width: 300px;
+            height: 100px;
+            background-image: url("image/start.gif");
+            background-repeat: no-repeat;
+            /*border: solid 1px red;*/
+        }
+        #star #startgame:active{
+            background-image: url("image/startClick.gif");
+            background-repeat: no-repeat;
+        }
+        #star #startgame:hover{
+            background-image: url("image/startOver.gif");
+            background-repeat: no-repeat;
+        }
+        #game{
+            width: 1530px;
+            height: 755px;
+            background-image: url("image/bg.jpg");
+            background-position: 100% 100%;
+            background-size: cover;
+            margin: 0 auto;
+            position: relative;
+            overflow: hidden;
+            display: none;
+        }
+        #game img{
+            position: absolute;
+        }
+        #jifen{
+            position: absolute;
+            top: 20px;
+            left: 1350px;
+            width: 150px;
+            height: 60px;
+            /*border: solid 1px red;*/
+        }
+        #jifen p{
+            position: absolute;
+            top: 27px;
+            left: 90px;
+        }
+        #jifen #countfenshu{
+            position: absolute;
+            top: 0px;
+            left: -30px;
+        }
+        #game #timer{
+            position: absolute;
+            top: 50px;
+            left: 600px;
+            width: 300px;
+            height: 60px;
+            /*border: solid red 1px;*/
+        }
+      #game #timer img{
+          position: static;
+        }
+       #jinyan{
+           position: absolute;
+           top: 100px;
+           left: 80px;
+           width: 100px;
+           height: 150px;
+       }
+        #jinyan #nltiao{
+            position: absolute;
+            top: 165px;
+            left: 0px;
+        }
+        #jinyan #nengliangimg{
+            position: absolute;
+            clip: rect(0px,31px,161px,0px);
+        }
+     #game #gameover{
+            position: absolute;
+            top:250px;
+            left: 600px;
+            width: 217px;
+            height: 196px;
+           text-align: center;
+           display: none;
+           background-image: url("image/ui/tipBg.png");
+           margin: 0 auto;
+           /*border: solid 1px red;*/
+        }
+        #game #gameover span{
+            position: absolute;
+            top: 60px;
+            left: 50px;
+            font-size: 25px;
+        }
+        #game #gameover img{
+            top: 120px;
+            left: 80px;
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+<div id="star">
+    <div id="shouye">
+        <img src="image/help/Help.png"><br/>
+        <img src="image/help/Help1.png"><span class="fontcolor">长按</span>空格键攻击！<br/>
+        <img src="image/help/Help2.png">伤害有<span class="fontcolor">延迟</span>！<br/>
+        开局送三个，且用且<span class="fontcolor">珍惜</span><br/>
+        <img src="image/help/boom.gif">一个格子为一个大招<br/>
+        <img src="image/help/exp.gif">此乃<span class="fontcolor">经验瓶</span>，经验满了<br/>
+        后，宝贝龙会<span class="fontcolor">进化</span>，终极状<br/>
+        态会有<span class="fontcolor">龙卷风</span>等你<span class="fontcolor">探索</span><br/>
+        <span class="fontcolor">游戏时间</span>为90秒哦！
+    </div>
+    <div id="startgame">
+    </div>
+</div>
+<div id="game">
+    <div id="jifen">
+        <img src="image/ui/RunnerGame.gif">
+        <p> <span id="countfenshu"></span>分</p>
+    </div>
+    <div id="timer">
+        <img src="image/num/0.gif">
+        <img src="image/num/1.gif" id="second">
+        <img src="image/num/d.png">
+        <img src="image/num/3.gif" id="minute1">
+        <img src="image/num/0.gif" id="minute2">
+    </div>
+    <div id="jinyan">
+        <img src="image/ui/exp0.png" >
+        <img src="image/ui/expMax.gif" style="display: none" id="nengliangimg">
+        <img src="image/ui/boom.gif" id="nltiao">
+    </div>
+    <div id="gameover">
+        <span>游戏结束！</span><br/>
+        <img src="image/ui/tipYO.gif">
+
+    </div>
+</div>
+<script type="text/javascript" src="diMonster.js"></script>
+<script type="text/javascript">
+    var startgame=document.getElementById("startgame");
+    var game=document.getElementById("game");
+    var star=document.getElementById("star");
+    startgame.onclick=function(){
+        game.style.display="block";
+        star.style.display="none";
+    }
+</script>
+</body>
+</html>
